@@ -1,0 +1,55 @@
+.body {
+  background: #ecf2f8;
+  min-height: 100vh;
+}
+
+.body .testimonials {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "card1 card1 card2 card3"
+ "card4 card5 card5 card3";
+  grid-gap: 20px;
+}
+
+.body .testimonials .testimonial {
+  border-radius: 20px;
+}
+
+.body .testimonials .test1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: card1;
+  background: #7541c8;
+}
+
+.body .testimonials .test2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: card2;
+  background: #48556a;
+}
+
+.body .testimonials .test3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: card4;
+  background: white;
+}
+
+.body .testimonials .test4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: card5;
+  background: #19212e;
+}
+
+.body .testimonials .test5 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: card3;
+  background: white;
+}
+/*# sourceMappingURL=styles.css.map */
