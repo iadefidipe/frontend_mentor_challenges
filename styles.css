@@ -1,20 +1,35 @@
 body {
   background: #ecf2f8;
-  min-height: 100vh;
+  height: 100%;
 }
 
-body .testimonials {
+.testimonials {
+  max-height: 50%;
   display: -ms-grid;
   display: grid;
+  margin: 150px 50px 100px 50px;
+  padding: 20px;
       grid-template-areas: "card1 card1 card2 card3" "card4 card5 card5 card3";
   grid-gap: 20px;
 }
 
-body .testimonials .testimonial {
+.testimonials .testimonial {
   border-radius: 20px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 10px #d4d6d8;
+          box-shadow: 0 0 10px #d4d6d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-body .testimonials .test1 {
+.testimonials .test1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -22,21 +37,21 @@ body .testimonials .test1 {
   background: #7541c8;
 }
 
-body .testimonials .test2 {
+.testimonials .test2 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: card2;
   background: #48556a;
 }
 
-body .testimonials .test3 {
+.testimonials .test3 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: card4;
   background: white;
 }
 
-body .testimonials .test4 {
+.testimonials .test4 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
@@ -44,11 +59,42 @@ body .testimonials .test4 {
   background: #19212e;
 }
 
-body .testimonials .test5 {
+.testimonials .test5 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
   grid-area: card3;
   background: white;
+}
+
+.testimonials h2 {
+  margin-top: 10px;
+}
+
+.testimonials .comment {
+  margin-top: 10px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.testimonial_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonial_header img {
+  border-radius: 200px;
+}
+
+.testimonial_header .test_title {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=styles.css.map */

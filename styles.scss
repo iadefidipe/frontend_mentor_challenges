@@ -14,10 +14,14 @@ $font-family: "Barlow Semi Condensed", sans-serif;
 
 body {
     background: $Bg-grayish-blue;
-    min-height: 100vh;
-    .testimonials {
-        display: grid;
+    height: 100%;   
+}
 
+.testimonials {
+        max-height: 50%;
+        display: grid;
+        margin: 150px 50px 100px 50px ;
+        padding: 20px;
         grid-template-areas:
         "card1 card1 card2 card3"
         "card4 card5 card5 card3";
@@ -25,6 +29,11 @@ body {
 
         .testimonial {
         border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgb(212, 214, 216);
+        display: flex;
+        flex-flow: column;
+        align-content: center;
         
         }
 
@@ -52,5 +61,28 @@ body {
             grid-area: card3;
             background: $card-white;
         }
+        h2{
+            margin-top: 10px;
+        }
+        .comment{
+            margin-top: 10px;
+            align-items: stretch;
+        }
+}
+
+.testimonial_header{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+
+    img {
+        border-radius: 200px;
     }
+    .test_title{
+        margin-left: 5px;
+       
+    }
+
+
+    
 }
