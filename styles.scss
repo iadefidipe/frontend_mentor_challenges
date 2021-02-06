@@ -1,10 +1,10 @@
 // Colour variables
-$card-violet: hsl(263, 55%, 52%);
-$card-grayish-blue: hsl(217, 19%, 35%);
-$card-blackish-blue: hsl(219, 29%, 14%);
-$card-white: hsl(0, 0%, 100%);
-$Bg-grayish-blue: hsl(210, 46%, 95%);
-$font-light-gray: hsl(0, 0%, 81%);
+$color-card-violet: hsl(263, 55%, 52%);
+$color-card-grayish-blue: hsl(217, 19%, 35%);
+$color-card-blackish-blue: hsl(219, 29%, 14%);
+$color-card-white: hsl(0, 0%, 100%);
+$color-testimonial-bg: hsl(210, 46%, 95%);
+$color-font-gray: hsl(0, 0%, 81%);
 
 // font variables
 $font-body: 0.8125rem;
@@ -12,8 +12,58 @@ $font-bold: 600;
 $font-medium: 500;
 $font-family: "Barlow Semi Condensed", sans-serif;
 
+%testimonial {
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgb(212, 214, 216);
+        display: flex;
+        flex-flow: column;
+        align-content: center;        
+}
+
+%font-header-colored {
+  h3 {
+      color:hsl(0, 0%, 100%);
+  }
+  p{
+      color:hsl(0, 0%, 50%);
+  }
+}
+
+%font-body-colored {
+    h2{
+        color:hsl(0, 0%, 100%);
+        margin-top: 10px;
+    }
+    .comment{
+        color:hsl(0, 0%, 50%);
+        margin-top: 10px;
+    }
+}
+
+%font-header-white{
+  h3 {
+      color:hsl(0, 0%, 38%);
+  }
+  p{
+      color:hsl(0, 0%, 70%);
+  }
+}
+
+%font-body-white{
+    h2{
+        color:hsl(0, 0%, 38%);
+        margin-top: 10px;
+    }
+    .comment{
+        color:hsl(0, 0%, 70%);
+        margin-top: 10px;
+    }
+}
+
+
 body {
-    background: $Bg-grayish-blue;
+    background: $color-testimonial-bg;
     height: 100%;   
 }
 
@@ -26,47 +76,56 @@ body {
         "card1 card1 card2 card3"
         "card4 card5 card5 card3";
         grid-gap: 20px;
-
-        .testimonial {
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 0 10px rgb(212, 214, 216);
-        display: flex;
-        flex-flow: column;
-        align-content: center;
-        
-        }
+        font-family: $font-family;
 
         .test1 {
-        grid-area: card1;
-        background: $card-violet;
+            @extend %testimonial;
+            grid-area: card1;
+            background: $color-card-violet;
+            @extend %font-body-colored; 
+            .testimonial_header{
+                @extend %font-header-colored; 
+            } 
         }
 
         .test2 {
-        grid-area: card2;
-        background: $card-grayish-blue;
+            @extend %testimonial;
+            grid-area: card2;
+            background: $color-card-grayish-blue;
+            @extend %font-body-colored; 
+            .testimonial_header{
+                @extend %font-header-colored; 
+            } 
         }
 
         .test3 {
+            @extend %testimonial;
             grid-area: card4;
-            background: $card-white;
+            background: $color-card-white;
+            @extend %font-body-white; 
+            .testimonial_header{
+                @extend %font-header-white; 
+            }
         }
 
         .test4{
+            @extend %testimonial;
             grid-area: card5;
-            background: $card-blackish-blue;
+            background: $color-card-blackish-blue;
+            @extend %font-body-colored; 
+            .testimonial_header{
+                @extend %font-header-colored; 
+            }
         }
 
         .test5{
+            @extend %testimonial;
             grid-area: card3;
-            background: $card-white;
-        }
-        h2{
-            margin-top: 10px;
-        }
-        .comment{
-            margin-top: 10px;
-            align-items: stretch;
+            background: $color-card-white;
+            @extend %font-body-white; 
+            .testimonial_header{
+                @extend %font-header-white; 
+            }
         }
 }
 
@@ -79,10 +138,7 @@ body {
         border-radius: 200px;
     }
     .test_title{
-        margin-left: 5px;
-       
-    }
-
-
-    
+        margin-left: 5px; 
+    }     
 }
+

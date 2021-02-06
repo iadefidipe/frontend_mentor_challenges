@@ -1,3 +1,55 @@
+.testimonials .test1, .testimonials .test2, .testimonials .test3, .testimonials .test4, .testimonials .test5 {
+  border-radius: 10px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 10px #d4d6d8;
+          box-shadow: 0 0 10px #d4d6d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.testimonials .test1 .testimonial_header h3, .testimonials .test2 .testimonial_header h3, .testimonials .test4 .testimonial_header h3 {
+  color: white;
+}
+
+.testimonials .test1 .testimonial_header p, .testimonials .test2 .testimonial_header p, .testimonials .test4 .testimonial_header p {
+  color: gray;
+}
+
+.testimonials .test1 h2, .testimonials .test2 h2, .testimonials .test4 h2 {
+  color: white;
+  margin-top: 10px;
+}
+
+.testimonials .test1 .comment, .testimonials .test2 .comment, .testimonials .test4 .comment {
+  color: gray;
+  margin-top: 10px;
+}
+
+.testimonials .test3 .testimonial_header h3, .testimonials .test5 .testimonial_header h3 {
+  color: #616161;
+}
+
+.testimonials .test3 .testimonial_header p, .testimonials .test5 .testimonial_header p {
+  color: #b3b3b3;
+}
+
+.testimonials .test3 h2, .testimonials .test5 h2 {
+  color: #616161;
+  margin-top: 10px;
+}
+
+.testimonials .test3 .comment, .testimonials .test5 .comment {
+  color: #b3b3b3;
+  margin-top: 10px;
+}
+
 body {
   background: #ecf2f8;
   height: 100%;
@@ -11,22 +63,7 @@ body {
   padding: 20px;
       grid-template-areas: "card1 card1 card2 card3" "card4 card5 card5 card3";
   grid-gap: 20px;
-}
-
-.testimonials .testimonial {
-  border-radius: 20px;
-  padding: 30px;
-  -webkit-box-shadow: 0 0 10px #d4d6d8;
-          box-shadow: 0 0 10px #d4d6d8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 .testimonials .test1 {
@@ -65,17 +102,6 @@ body {
   -ms-grid-column: 4;
   grid-area: card3;
   background: white;
-}
-
-.testimonials h2 {
-  margin-top: 10px;
-}
-
-.testimonials .comment {
-  margin-top: 10px;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
 }
 
 .testimonial_header {
