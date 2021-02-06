@@ -34,30 +34,40 @@ $font-family: "Barlow Semi Condensed", sans-serif;
     h2{
         color:hsl(0, 0%, 100%);
         margin-top: 10px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.7rem;
     }
     .comment{
         color:hsl(0, 0%, 50%);
-        margin-top: 10px;
+        font-size: 1rem;
+        margin-top: 20px;
+        line-height: 1.5rem;
     }
 }
 
 %font-header-white{
-  h3 {
-      color:hsl(0, 0%, 38%);
-  }
-  p{
-      color:hsl(0, 0%, 70%);
-  }
+    h3 {
+        color:hsl(0, 0%, 38%);
+    }
+    p{
+        color:hsl(0, 0%, 70%);
+    }
 }
 
 %font-body-white{
     h2{
         color:hsl(0, 0%, 38%);
         margin-top: 10px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.7rem;
     }
     .comment{
         color:hsl(0, 0%, 70%);
-        margin-top: 10px;
+        font-size: 1rem;
+        margin-top: 20px;
+        line-height: 1.5rem;
     }
 }
 
@@ -86,8 +96,12 @@ body {
             .testimonial_header{
                 @extend %font-header-colored; 
             } 
+            background-image: url(./images/bg-pattern-quotation.svg);
+            background-repeat: no-repeat;
+            background-position: top right 100px;
+            background-size: 140px;
+            
         }
-
         .test2 {
             @extend %testimonial;
             grid-area: card2;
