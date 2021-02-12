@@ -12,147 +12,170 @@ $font-bold: 600;
 $font-medium: 500;
 $font-family: "Barlow Semi Condensed", sans-serif;
 
+// media-query mixins
+@mixin media-query($size) {
+  @if $size == tablet {
+    @media screen and (min-width: 760px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media screen and (max-width: 375px) {
+      @content;
+    }
+  }
+}
+
+//style extend
+
 %testimonial {
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 0 10px rgb(212, 214, 216);
-        display: flex;
-        flex-flow: column;
-        align-content: center;        
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgb(212, 214, 216);
+  display: flex;
+  flex-flow: column;
+  align-content: center;
 }
 
 %font-header-colored {
   h3 {
-      color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
   }
-  p{
-      color:hsl(0, 0%, 50%);
+  p {
+    color: hsl(0, 0%, 50%);
   }
 }
 
 %font-body-colored {
-    h2{
-        color:hsl(0, 0%, 100%);
-        margin-top: 10px;
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 1.7rem;
-    }
-    .comment{
-        color:hsl(0, 0%, 50%);
-        font-size: 1rem;
-        margin-top: 20px;
-        line-height: 1.5rem;
-    }
+  h2 {
+    color: hsl(0, 0%, 100%);
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+  }
+  .comment {
+    color: hsl(0, 0%, 50%);
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 1.5rem;
+  }
 }
 
-%font-header-white{
-    h3 {
-        color:hsl(0, 0%, 38%);
-    }
-    p{
-        color:hsl(0, 0%, 70%);
-    }
+%font-header-white {
+  h3 {
+    color: hsl(0, 0%, 38%);
+  }
+  p {
+    color: hsl(0, 0%, 70%);
+  }
 }
 
-%font-body-white{
-    h2{
-        color:hsl(0, 0%, 38%);
-        margin-top: 10px;
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 1.7rem;
-    }
-    .comment{
-        color:hsl(0, 0%, 70%);
-        font-size: 1rem;
-        margin-top: 20px;
-        line-height: 1.5rem;
-    }
+%font-body-white {
+  h2 {
+    color: hsl(0, 0%, 38%);
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+  }
+  .comment {
+    color: hsl(0, 0%, 70%);
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 1.5rem;
+  }
 }
 
+//styling
 
 body {
-    background: $color-testimonial-bg;
-    height: 100%;   
+  background: $color-testimonial-bg;
+  height: 100%;
 }
 
 .testimonials {
-        max-height: 50%;
-        display: grid;
-        margin: 150px 50px 100px 50px ;
-        padding: 20px;
+  max-height: 50%;
+  display: grid;
+  margin: 150px 50px 100px 50px;
+  padding: 20px;
+  grid-template-areas:
+    "card1 card1 card2 card3"
+    "card4 card5 card5 card3";
+  grid-gap: 20px;
+  font-family: $font-family;
+  @include media-query(mobile) {
+        margin: 150px auto 100px auto;
         grid-template-areas:
-        "card1 card1 card2 card3"
-        "card4 card5 card5 card3";
-        grid-gap: 20px;
-        font-family: $font-family;
+        "card1"
+        "card2"
+        "card4"
+        "card5"
+        "card3";
+  }
 
-        .test1 {
-            @extend %testimonial;
-            grid-area: card1;
-            background: $color-card-violet;
-            @extend %font-body-colored; 
-            .testimonial_header{
-                @extend %font-header-colored; 
-            } 
-            background-image: url(./images/bg-pattern-quotation.svg);
-            background-repeat: no-repeat;
-            background-position: top right 100px;
-            background-size: 140px;
-            
-        }
-        .test2 {
-            @extend %testimonial;
-            grid-area: card2;
-            background: $color-card-grayish-blue;
-            @extend %font-body-colored; 
-            .testimonial_header{
-                @extend %font-header-colored; 
-            } 
-        }
-
-        .test3 {
-            @extend %testimonial;
-            grid-area: card4;
-            background: $color-card-white;
-            @extend %font-body-white; 
-            .testimonial_header{
-                @extend %font-header-white; 
-            }
-        }
-
-        .test4{
-            @extend %testimonial;
-            grid-area: card5;
-            background: $color-card-blackish-blue;
-            @extend %font-body-colored; 
-            .testimonial_header{
-                @extend %font-header-colored; 
-            }
-        }
-
-        .test5{
-            @extend %testimonial;
-            grid-area: card3;
-            background: $color-card-white;
-            @extend %font-body-white; 
-            .testimonial_header{
-                @extend %font-header-white; 
-            }
-        }
-}
-
-.testimonial_header{
-    display:flex;
-    justify-content: start;
-    align-items: center;
-
-    img {
-        border-radius: 200px;
+  .test1 {
+    @extend %testimonial;
+    grid-area: card1;
+    background: $color-card-violet;
+    @extend %font-body-colored;
+    .testimonial_header {
+      @extend %font-header-colored;
     }
-    .test_title{
-        margin-left: 5px; 
-    }     
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 100px;
+    background-size: 140px;
+  }
+  .test2 {
+    @extend %testimonial;
+    grid-area: card2;
+    background: $color-card-grayish-blue;
+    @extend %font-body-colored;
+    .testimonial_header {
+      @extend %font-header-colored;
+    }
+  }
+
+  .test3 {
+    @extend %testimonial;
+    grid-area: card4;
+    background: $color-card-white;
+    @extend %font-body-white;
+    .testimonial_header {
+      @extend %font-header-white;
+    }
+  }
+
+  .test4 {
+    @extend %testimonial;
+    grid-area: card5;
+    background: $color-card-blackish-blue;
+    @extend %font-body-colored;
+    .testimonial_header {
+      @extend %font-header-colored;
+    }
+  }
+
+  .test5 {
+    @extend %testimonial;
+    grid-area: card3;
+    background: $color-card-white;
+    @extend %font-body-white;
+    .testimonial_header {
+      @extend %font-header-white;
+    }
+  }
 }
 
+.testimonial_header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  img {
+    border-radius: 200px;
+  }
+  .test_title {
+    margin-left: 10px;
+  }
+}
