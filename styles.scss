@@ -9,26 +9,41 @@ $color-font-gray: hsl(0, 0%, 81%);
 // font variables
 $font-size-body: 1rem;
 $font-size-name: 1.2rem;
-$font-size-topic: 1.5rem;
+$font-size-topic: 1.8rem;
 $font-size-comment: 1.2rem;
 $font-bold: 600;
 $font-medium: 500;
 $font-family: "Barlow Semi Condensed", sans-serif;
 
 $line-height: 2rem;
+$line-height-topic: 2.5rem;
 
 
 // media-query mixins
 @mixin media-query($size) {
-  @if $size == tablet {
-    @media screen and (min-width: 760px) and (max-width: 960px) {
-      @content;
+  
+    @if $size == Desktop-large{
+        @media screen and (min-width: 1440px) and (max-width: 2560px) {
+            @content;
+        }
     }
-  } @else if $size == mobile {
-    @media screen and (max-width: 375px) {
-      @content;
+
+    @else if $size == desktop-medium {
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            @content;
+        } 
+}
+
+    @else if $size == tablet {
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            @content;
+        } 
     }
-  }
+    @else if $size == mobile {
+        @media screen and (min-width: 320px){
+            @content;
+        }
+    }
 }
 
 //style extend
@@ -39,7 +54,9 @@ $line-height: 2rem;
   box-shadow: 0 0 10px rgb(212, 214, 216);
   display: flex;
   flex-flow: column;
-  align-content: center;
+//   align-content: center;
+//   align-self: center;
+//    justify-items: stretch;
 }
 
 %font-header-colored {
@@ -61,7 +78,7 @@ $line-height: 2rem;
     margin-top: 20px;
     font-size: $font-size-topic;
     font-weight: 600;
-    line-height: $line-height;
+    line-height: $line-height-topic;
   }
   .comment {
     color: hsl(0, 0%, 70%);
@@ -90,14 +107,14 @@ $line-height: 2rem;
     margin-top: 20px;
     font-size: $font-size-topic;
     font-weight: 600;
-    line-height: $line-height;
+    line-height: $line-height-topic;
   }
   .comment {
     color: hsl(0, 0%, 50%);
     font-size: $font-size-comment;
     margin-top: 20px;
     line-height: $line-height;
-  }
+    }
 }
 
 //styling
@@ -108,24 +125,37 @@ body {
 }
 
 .testimonials {
-//   max-height: 70%;
-  display: grid;
-  margin: 150px auto 100px auto;
-  padding: 10px;
-  grid-template-areas:
-    "card1 card1 card2 card3"
-    "card4 card5 card5 card3";
-  grid-gap: 30px;
-  font-family: $font-family;
-  @include media-query(mobile) {
-        margin: 150px auto 100px auto;
-        grid-template-areas:
-        "card1"
-        "card2"
-        "card4"
-        "card5"
-        "card3";
+    height: 70%;
+    display: grid;
+    margin: 100px auto;
+    padding: 100px;
+    grid-template-areas:
+        "card1 card1 card2 card3"
+        "card4 card5 card5 card3";
+    grid-gap: 30px;
+    font-family: $font-family;
+
+
+    @include media-query(tablet){
+        margin: 50px auto;
+            grid-template-areas:
+            "card1 card2"
+            "card4 card5"
+            "card3 card3"
+            ;
+    }
+    // @include media-query(mobile) {
+    //         margin: 50px auto;
+    //         grid-template-areas:
+    //         "card1"
+    //         "card2"
+    //         "card4"
+    //         "card5"
+    //         "card3";
+    // }
+
   }
+  
 
   .test1 {
     @extend %testimonial;
@@ -179,7 +209,7 @@ body {
         @extend %font-header-white;
     }
   }
-}
+
 
 .testimonial_header {
   display: flex;

@@ -1,4 +1,4 @@
-.testimonials .test1, .testimonials .test2, .testimonials .test3, .testimonials .test4, .testimonials .test5 {
+.test1, .test2, .test3, .test4, .test5 {
   border-radius: 10px;
   padding: 30px;
   -webkit-box-shadow: 0 0 10px #d4d6d8;
@@ -10,58 +10,56 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
-.testimonials .test1 .testimonial_header h3, .testimonials .test2 .testimonial_header h3, .testimonials .test4 .testimonial_header h3 {
+.test1 .testimonial_header h3, .test2 .testimonial_header h3, .test4 .testimonial_header h3 {
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.testimonials .test1 .testimonial_header p, .testimonials .test2 .testimonial_header p, .testimonials .test4 .testimonial_header p {
+.test1 .testimonial_header p, .test2 .testimonial_header p, .test4 .testimonial_header p {
   color: #b3b3b3;
   font-size: 1rem;
   margin-top: 8px;
 }
 
-.testimonials .test1 h2, .testimonials .test2 h2, .testimonials .test4 h2 {
+.test1 h2, .test2 h2, .test4 h2 {
   color: white;
   margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
-.testimonials .test1 .comment, .testimonials .test2 .comment, .testimonials .test4 .comment {
+.test1 .comment, .test2 .comment, .test4 .comment {
   color: #b3b3b3;
   font-size: 1.2rem;
   margin-top: 20px;
   line-height: 2rem;
 }
 
-.testimonials .test3 .testimonial_header h3, .testimonials .test5 .testimonial_header h3 {
+.test3 .testimonial_header h3, .test5 .testimonial_header h3 {
   color: #616161;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.testimonials .test3 .testimonial_header p, .testimonials .test5 .testimonial_header p {
+.test3 .testimonial_header p, .test5 .testimonial_header p {
   color: gray;
   font-size: 1rem;
   margin-top: 8px;
 }
 
-.testimonials .test3 h2, .testimonials .test5 h2 {
+.test3 h2, .test5 h2 {
   color: #616161;
   margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
-.testimonials .test3 .comment, .testimonials .test5 .comment {
+.test3 .comment, .test5 .comment {
   color: gray;
   font-size: 1.2rem;
   margin-top: 20px;
@@ -74,23 +72,24 @@ body {
 }
 
 .testimonials {
+  height: 70%;
   display: -ms-grid;
   display: grid;
-  margin: 150px auto 100px auto;
-  padding: 10px;
+  margin: 100px auto;
+  padding: 100px;
       grid-template-areas: "card1 card1 card2 card3" "card4 card5 card5 card3";
   grid-gap: 30px;
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .testimonials {
-    margin: 150px auto 100px auto;
-        grid-template-areas: "card1" "card2" "card4" "card5" "card3";
+    margin: 50px auto;
+        grid-template-areas: "card1 card2" "card4 card5" "card3 card3";
   }
 }
 
-.testimonials .test1 {
+.test1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -102,21 +101,21 @@ body {
   background-size: 140px;
 }
 
-.testimonials .test2 {
+.test2 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: card2;
   background: #48556a;
 }
 
-.testimonials .test3 {
+.test3 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: card4;
   background: white;
 }
 
-.testimonials .test4 {
+.test4 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
@@ -124,7 +123,7 @@ body {
   background: #19212e;
 }
 
-.testimonials .test5 {
+.test5 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
