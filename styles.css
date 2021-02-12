@@ -16,48 +16,56 @@
 
 .testimonials .test1 .testimonial_header h3, .testimonials .test2 .testimonial_header h3, .testimonials .test4 .testimonial_header h3 {
   color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .testimonials .test1 .testimonial_header p, .testimonials .test2 .testimonial_header p, .testimonials .test4 .testimonial_header p {
-  color: gray;
+  color: #b3b3b3;
+  font-size: 1rem;
+  margin-top: 8px;
 }
 
 .testimonials .test1 h2, .testimonials .test2 h2, .testimonials .test4 h2 {
   color: white;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 
 .testimonials .test1 .comment, .testimonials .test2 .comment, .testimonials .test4 .comment {
-  color: gray;
-  font-size: 1rem;
+  color: #b3b3b3;
+  font-size: 1.2rem;
   margin-top: 20px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 .testimonials .test3 .testimonial_header h3, .testimonials .test5 .testimonial_header h3 {
   color: #616161;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .testimonials .test3 .testimonial_header p, .testimonials .test5 .testimonial_header p {
-  color: #b3b3b3;
+  color: gray;
+  font-size: 1rem;
+  margin-top: 8px;
 }
 
 .testimonials .test3 h2, .testimonials .test5 h2 {
   color: #616161;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 
 .testimonials .test3 .comment, .testimonials .test5 .comment {
-  color: #b3b3b3;
-  font-size: 1rem;
+  color: gray;
+  font-size: 1.2rem;
   margin-top: 20px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 body {
@@ -66,13 +74,12 @@ body {
 }
 
 .testimonials {
-  max-height: 50%;
   display: -ms-grid;
   display: grid;
-  margin: 150px 50px 100px 50px;
-  padding: 20px;
+  margin: 150px auto 100px auto;
+  padding: 10px;
       grid-template-areas: "card1 card1 card2 card3" "card4 card5 card5 card3";
-  grid-gap: 20px;
+  grid-gap: 30px;
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
@@ -138,10 +145,10 @@ body {
 }
 
 .testimonial_header img {
-  border-radius: 200px;
+  border-radius: 50px;
 }
 
 .testimonial_header .test_title {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -7,10 +7,16 @@ $color-testimonial-bg: hsl(210, 46%, 95%);
 $color-font-gray: hsl(0, 0%, 81%);
 
 // font variables
-$font-body: 0.8125rem;
+$font-size-body: 1rem;
+$font-size-name: 1.2rem;
+$font-size-topic: 1.5rem;
+$font-size-comment: 1.2rem;
 $font-bold: 600;
 $font-medium: 500;
 $font-family: "Barlow Semi Condensed", sans-serif;
+
+$line-height: 2rem;
+
 
 // media-query mixins
 @mixin media-query($size) {
@@ -39,50 +45,58 @@ $font-family: "Barlow Semi Condensed", sans-serif;
 %font-header-colored {
   h3 {
     color: hsl(0, 0%, 100%);
+    font-size: $font-size-name;
+    font-weight: $font-bold;
   }
   p {
-    color: hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 70%);
+    font-size: $font-size-body;
+    margin-top: 8px;
   }
 }
 
 %font-body-colored {
   h2 {
     color: hsl(0, 0%, 100%);
-    margin-top: 10px;
-    font-size: 1.5rem;
+    margin-top: 20px;
+    font-size: $font-size-topic;
     font-weight: 600;
-    line-height: 1.7rem;
+    line-height: $line-height;
   }
   .comment {
-    color: hsl(0, 0%, 50%);
-    font-size: 1rem;
+    color: hsl(0, 0%, 70%);
+    font-size: $font-size-comment;
     margin-top: 20px;
-    line-height: 1.5rem;
+    line-height: $line-height;
   }
 }
 
 %font-header-white {
   h3 {
     color: hsl(0, 0%, 38%);
+    font-size: $font-size-name;
+    font-weight: $font-bold;
   }
   p {
-    color: hsl(0, 0%, 70%);
+    color: hsl(0, 0%, 50%);
+    font-size: $font-size-body;
+    margin-top: 8px;
   }
 }
 
 %font-body-white {
   h2 {
     color: hsl(0, 0%, 38%);
-    margin-top: 10px;
-    font-size: 1.5rem;
+    margin-top: 20px;
+    font-size: $font-size-topic;
     font-weight: 600;
-    line-height: 1.7rem;
+    line-height: $line-height;
   }
   .comment {
-    color: hsl(0, 0%, 70%);
-    font-size: 1rem;
+    color: hsl(0, 0%, 50%);
+    font-size: $font-size-comment;
     margin-top: 20px;
-    line-height: 1.5rem;
+    line-height: $line-height;
   }
 }
 
@@ -94,14 +108,14 @@ body {
 }
 
 .testimonials {
-  max-height: 50%;
+//   max-height: 70%;
   display: grid;
-  margin: 150px 50px 100px 50px;
-  padding: 20px;
+  margin: 150px auto 100px auto;
+  padding: 10px;
   grid-template-areas:
     "card1 card1 card2 card3"
     "card4 card5 card5 card3";
-  grid-gap: 20px;
+  grid-gap: 30px;
   font-family: $font-family;
   @include media-query(mobile) {
         margin: 150px auto 100px auto;
@@ -162,7 +176,7 @@ body {
     background: $color-card-white;
     @extend %font-body-white;
     .testimonial_header {
-      @extend %font-header-white;
+        @extend %font-header-white;
     }
   }
 }
@@ -173,9 +187,9 @@ body {
   align-items: center;
 
   img {
-    border-radius: 200px;
+    border-radius: 50px;
   }
   .test_title {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 }
