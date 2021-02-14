@@ -101,6 +101,9 @@
 
 html {
   height: 100vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 body {
@@ -124,7 +127,7 @@ body {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 556px) {
   .testimonials {
     margin: 50px auto;
         grid-template-areas: "card1" "card2" "card4" "card5" "card3";
