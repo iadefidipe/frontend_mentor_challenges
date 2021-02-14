@@ -1,134 +1,18 @@
-// Colour variables
-$color-card-violet: hsl(263, 55%, 52%);
-$color-card-grayish-blue: hsl(217, 19%, 35%);
-$color-card-blackish-blue: hsl(219, 29%, 14%);
-$color-card-white: hsl(0, 0%, 100%);
-$color-testimonial-bg: hsl(210, 46%, 95%);
-$color-font-gray: hsl(0, 0%, 81%);
-
-// font variables
-$font-size-body: 1rem;
-$font-size-name: 1.2rem;
-$font-size-topic: 1.8rem;
-$font-size-comment: 1.2rem;
-$font-bold: 600;
-$font-medium: 500;
-$font-family: "Barlow Semi Condensed", sans-serif;
-
-$line-height: 2rem;
-$line-height-topic: 2.5rem;
+// partials
+@import './Style/variables';
+@import './Style/mediaqueries';
+@import './Style/extends';
+@import './Style/base';
 
 
-// media-query mixins
-@mixin media-query($size) {
-  
-    @if $size == Desktop-large{
-        @media screen and (min-width: 1440px) and (max-width: 2560px) {
-            @content;
-        }
-    }
-
-    @else if $size == desktop-medium {
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
-            @content;
-        } 
-}
-
-    @else if $size == tablet {
-        @media screen and (min-width: 320px) and (max-width: 768px) {
-            @content;
-        } 
-    }
-    @else if $size == mobile {
-        @media screen and (min-width: 320px){
-            @content;
-        }
-    }
-}
-
-//style extend
-
-%testimonial {
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgb(212, 214, 216);
-  display: flex;
-  flex-flow: column;
-//   align-content: center;
-//   align-self: center;
-//    justify-items: stretch;
-}
-
-%font-header-colored {
-  h3 {
-    color: hsl(0, 0%, 100%);
-    font-size: $font-size-name;
-    font-weight: $font-bold;
-  }
-  p {
-    color: hsl(0, 0%, 70%);
-    font-size: $font-size-body;
-    margin-top: 8px;
-  }
-}
-
-%font-body-colored {
-  h2 {
-    color: hsl(0, 0%, 100%);
-    margin-top: 20px;
-    font-size: $font-size-topic;
-    font-weight: 600;
-    line-height: $line-height-topic;
-  }
-  .comment {
-    color: hsl(0, 0%, 70%);
-    font-size: $font-size-comment;
-    margin-top: 20px;
-    line-height: $line-height;
-  }
-}
-
-%font-header-white {
-  h3 {
-    color: hsl(0, 0%, 38%);
-    font-size: $font-size-name;
-    font-weight: $font-bold;
-  }
-  p {
-    color: hsl(0, 0%, 50%);
-    font-size: $font-size-body;
-    margin-top: 8px;
-  }
-}
-
-%font-body-white {
-  h2 {
-    color: hsl(0, 0%, 38%);
-    margin-top: 20px;
-    font-size: $font-size-topic;
-    font-weight: 600;
-    line-height: $line-height-topic;
-  }
-  .comment {
-    color: hsl(0, 0%, 50%);
-    font-size: $font-size-comment;
-    margin-top: 20px;
-    line-height: $line-height;
-    }
-}
 
 //styling
 
-body {
-  background: $color-testimonial-bg;
-  height: 100%;
-}
 
 .testimonials {
-    height: 70%;
     display: grid;
-    margin: 100px auto;
-    padding: 100px;
+    margin: 50px auto;
+    padding: 50px;
     grid-template-areas:
         "card1 card1 card2 card3"
         "card4 card5 card5 card3";
@@ -144,15 +28,15 @@ body {
             "card3 card3"
             ;
     }
-    // @include media-query(mobile) {
-    //         margin: 50px auto;
-    //         grid-template-areas:
-    //         "card1"
-    //         "card2"
-    //         "card4"
-    //         "card5"
-    //         "card3";
-    // }
+    @include media-query(mobile) {
+            margin: 50px auto;
+            grid-template-areas:
+            "card1"
+            "card2"
+            "card4"
+            "card5"
+            "card3";
+    }
 
   }
   
@@ -169,6 +53,10 @@ body {
     background-repeat: no-repeat;
     background-position: top right 100px;
     background-size: 140px;
+    @include media-query(desktop-medium){
+      background-size: 150px;
+      background-position: top right 50px;
+    }
   }
   .test2 {
     @extend %testimonial;
