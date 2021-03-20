@@ -33,9 +33,9 @@
             ;
     }
     @include media-query(mobile) {
-            // margin: 50px auto;
-            grid-template-columns: repeat(1, minmax(100px, 550px));
-            grid-template-rows: repeat(4, minmax(250px,450px));
+            margin: 50px auto;
+            grid-template-columns: repeat(1, minmax(250px, 350px));
+            grid-template-rows: repeat(4, minmax(200px,350px));
             grid-template-areas:
             "card1"
             "card2"

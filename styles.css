@@ -141,10 +141,11 @@ body {
 
 @media screen and (max-width: 556px) {
   .testimonials {
-    -ms-grid-columns: (minmax(100px, 550px))[1];
-        grid-template-columns: repeat(1, minmax(100px, 550px));
-    -ms-grid-rows: (minmax(250px, 450px))[4];
-        grid-template-rows: repeat(4, minmax(250px, 450px));
+    margin: 50px auto;
+    -ms-grid-columns: (minmax(250px, 350px))[1];
+        grid-template-columns: repeat(1, minmax(250px, 350px));
+    -ms-grid-rows: (minmax(200px, 350px))[4];
+        grid-template-rows: repeat(4, minmax(200px, 350px));
         grid-template-areas: "card1" "card2" "card4" "card5" "card3";
   }
 }
