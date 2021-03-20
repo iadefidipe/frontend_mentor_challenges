@@ -1,6 +1,8 @@
 %testimonial {
+    height: auto;
+    
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 0 10px rgb(212, 214, 216);
     display: flex;
     flex-flow: column;
@@ -33,7 +35,7 @@
   %font-body-colored {
     h2 {
       color: hsl(0, 0%, 100%);
-      margin-top: 20px;
+      margin-top: 10px;
       font-size: $font-size-topic;
       font-weight: 600;
       line-height: $line-height-topic;

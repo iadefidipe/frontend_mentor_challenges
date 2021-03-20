@@ -11,17 +11,21 @@
 
 .testimonials {
     display: grid;
-    margin: 50px auto;
-    padding: 50px;
+    margin: 100px ;
+    padding: 30px;
+    grid-template-columns: repeat(4, minmax(200px, 250px));
+    grid-template-rows: repeat(2, minmax(220px, 250px));
     grid-template-areas:
         "card1 card1 card2 card3"
         "card4 card5 card5 card3";
-    grid-gap: 30px;
+    grid-gap: 10px;
     font-family: $font-family;
 
 
     @include media-query(tablet){
-        margin: 50px auto;
+        // margin: 50px auto;
+        grid-template-columns: repeat(2, minmax(366px, 450px));
+        grid-template-rows: repeat(3, minmax(250px, 300px));
             grid-template-areas:
             "card1 card2"
             "card4 card5"
@@ -29,7 +33,9 @@
             ;
     }
     @include media-query(mobile) {
-            margin: 50px auto;
+            // margin: 50px auto;
+            grid-template-columns: repeat(1, minmax(100px, 550px));
+            grid-template-rows: repeat(4, minmax(250px,450px));
             grid-template-areas:
             "card1"
             "card2"
@@ -52,9 +58,13 @@
     background-image: url(./images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
     background-position: top right 100px;
-    background-size: 140px;
+    background-size: 130px;
     @include media-query(desktop-medium){
       background-size: 150px;
+      background-position: top right 50px;
+    }
+    @include media-query(tablet){
+      background-size: 100px;
       background-position: top right 50px;
     }
   }
@@ -111,3 +121,5 @@
     margin-left: 20px;
   }
 }
+
+
