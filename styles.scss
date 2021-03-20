@@ -11,21 +11,21 @@
 
 .testimonials {
     display: grid;
-    margin: 100px ;
+    margin: 100px;
     padding: 30px;
     grid-template-columns: repeat(4, minmax(200px, 250px));
-    grid-template-rows: repeat(2, minmax(220px, 250px));
+    grid-template-rows: repeat(2, 250px);
     grid-template-areas:
         "card1 card1 card2 card3"
         "card4 card5 card5 card3";
-    grid-gap: 10px;
+    grid-gap: 20px;
     font-family: $font-family;
 
 
     @include media-query(tablet){
-        // margin: 50px auto;
-        grid-template-columns: repeat(2, minmax(366px, 450px));
-        grid-template-rows: repeat(3, minmax(250px, 300px));
+        margin: 50px auto;
+        grid-template-columns: repeat(2, minmax(200px, 450px));
+        grid-template-rows: repeat(3, minmax(200px, 380px));
             grid-template-areas:
             "card1 card2"
             "card4 card5"

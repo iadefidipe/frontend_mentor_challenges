@@ -122,19 +122,20 @@ body {
   padding: 30px;
   -ms-grid-columns: (minmax(200px, 250px))[4];
       grid-template-columns: repeat(4, minmax(200px, 250px));
-  -ms-grid-rows: (minmax(220px, 250px))[2];
-      grid-template-rows: repeat(2, minmax(220px, 250px));
+  -ms-grid-rows: (250px)[2];
+      grid-template-rows: repeat(2, 250px);
       grid-template-areas: "card1 card1 card2 card3" "card4 card5 card5 card3";
-  grid-gap: 10px;
+  grid-gap: 20px;
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
   .testimonials {
-    -ms-grid-columns: (minmax(366px, 450px))[2];
-        grid-template-columns: repeat(2, minmax(366px, 450px));
-    -ms-grid-rows: (minmax(250px, 300px))[3];
-        grid-template-rows: repeat(3, minmax(250px, 300px));
+    margin: 50px auto;
+    -ms-grid-columns: (minmax(200px, 450px))[2];
+        grid-template-columns: repeat(2, minmax(200px, 450px));
+    -ms-grid-rows: (minmax(200px, 380px))[3];
+        grid-template-rows: repeat(3, minmax(200px, 380px));
         grid-template-areas: "card1 card2" "card4 card5" "card3 card3";
   }
 }
